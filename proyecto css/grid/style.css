@@ -1,0 +1,119 @@
+:root {
+  --primary-color: rgb(236, 236, 236);
+  --secondary-color: rgb(21, 21, 21);
+  --blue-color: #2bc5cd;
+  --orange-color: #ff693d;
+  --border: 2px solid var(--blue-color);
+  --spacing: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "header school student"
+    "main time time"
+    "alumni footer footer";
+  gap: var(--spacing);
+  padding: var(--spacing);
+  background-color: var(--primary-color);
+  font-family: var(--font-family);
+}
+
+/* Grid areas */
+header {
+  grid-area: header;
+  background-color: var(--blue-color);
+  color: white;
+  padding: var(--spacing);
+  border-radius: 8px;
+}
+
+.school {
+  grid-area: school;
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+}
+
+.student {
+  grid-area: student;
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
+}
+
+.time {
+  grid-area: time;
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
+}
+
+.alumni {
+  grid-area: alumni;
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
+}
+
+.school,
+.student,
+.time,
+.alumni {
+  background-size: cover;
+  background-position: center;
+  min-height: 200px;
+  border-radius: 8px;
+}
+
+main {
+  grid-area: main;
+  background-color: #d5eff2;
+  color: var(--blue-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing);
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--orange-color);
+  color: white;
+  padding: var(--spacing);
+  border-radius: 8px;
+}
+
+footer h3 {
+  margin-bottom: 10px;
+}
+
+footer button {
+  background-color: white;
+  color: var(--orange-color);
+  border: none;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "school"
+      "student"
+      "main"
+      "time"
+      "alumni"
+      "footer";
+  }
+}
